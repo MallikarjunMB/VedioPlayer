@@ -69,7 +69,7 @@ export default class Sidebar extends React.Component {
     console.log("cc value",this.state.cc)
     console.log("videovalue",this.state.video)
     const postItems = this.state.video.map((product, index) => (
-   <Nav><a onClick={() => this.handleClick(index)} >{product.videoTitle}</a></Nav>
+   <Nav><a onClick={() => this.handleClick(index + 1)} >{product.videoTitle}</a></Nav>
 
     ));
     return (
@@ -97,7 +97,7 @@ export default class Sidebar extends React.Component {
            <AddVideo /> :
            null
         }
-            {this.state.cc && <Player list={this.state.video[this.state.cc]} counter={this.state.cc}/>}
+            {this.state.cc && <Player list={this.state.video[this.state.cc - 1]} counter={this.state.cc}/>}
         </Body>
       </AppContainer>
     );
