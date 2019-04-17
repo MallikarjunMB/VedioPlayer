@@ -6,9 +6,11 @@ import {
   ExampleNavigation as Navigation,
   ExampleBody as Body
 } from "./containers";
-import Playlist from './playlist'
+
 import Player from './player'
 import list from '../jsons/library1.json'
+import AddVideo from './uploadform'
+import axios from 'axios';
 
 const AppContainer = styled(BaseAppContainer)`
   height: calc(100vh - 40px);
@@ -24,6 +26,8 @@ export default class Sidebar extends React.Component {
   
     this.state = {
        cc:null,
+       show:false,
+       video:[]
     }
   }
   
@@ -34,14 +38,38 @@ export default class Sidebar extends React.Component {
   };
 
   handleClick = (e) =>{
+    console.log("event",e)
    this.setState({cc:e})
   } 
 
+  onButtonclick = () =>{
+    this.setState({show:true})
+    if(this.state.show==true){
+      this.setState({show:false})
+    }
+   
+  }
+
+  componentDidMount() {
+    axios.get('https://grap-tab.firebaseio.com/videoRecord.json')
+    .then(res => this.setState({video:  Object.values(res.data)})
+    )
+    .catch(err=>{
+      console.log(err.response.data)
+    })
+    console.log('state from CDM',this.state.video)
+  }
+
+
+
   render() {
+    //this.state.video.indexOf(product.videoTitle
+    // console.log('Video element ', ref2.once('value', ()))
     console.log("lists>>>>", list)
     console.log("cc value",this.state.cc)
-    const postItems = list.map(product => (
-   <Nav><a onClick={() => this.handleClick(product.id)} >{product.title}</a></Nav>
+    console.log("videovalue",this.state.video)
+    const postItems = this.state.video.map((product, index) => (
+   <Nav><a onClick={() => this.handleClick(index)} >{product.videoTitle}</a></Nav>
 
     ));
     return (
@@ -56,10 +84,20 @@ export default class Sidebar extends React.Component {
               My Library
             {postItems}
             </Nav>
+            <button onClick={this.onButtonclick}>Add vedio</button> 
+            {/* <Button onClick={this._onButtonClick}>Button</Button> */}
+        {/* {this.state.show ?
+           <AddVideo /> :
+           null
+        } */}
           </SideNav>
         </Navigation>
         <Body >
-            {this.state.cc && <Player list={list[this.state.cc - 1]} counter={this.state.cc}/>}
+        {this.state.show ?
+           <AddVideo /> :
+           null
+        }
+            {this.state.cc && <Player list={this.state.video[this.state.cc]} counter={this.state.cc}/>}
         </Body>
       </AppContainer>
     );

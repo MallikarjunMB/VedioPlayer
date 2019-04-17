@@ -67,22 +67,22 @@ export default class player extends Component {
 //    }
   render() {
       console.log('props...>',this.props)
-      console.log('render Count ', this.state.count)
-      console.log('render url ', this.state.url)
-      console.log('this.props.list.start----',this.props.list.start)
-      console.log('this.props.list.end----',this.props.list.stop)
+      // console.log('render Count ', this.state.count)
+      // console.log('render url ', this.state.url)
+      // console.log('this.props.list.start----',this.props.list.start)
+      // console.log('this.props.list.end----',this.props.list.stop)
       
       
     return (
       <div>
         {/* <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' playing /> */}
         <ReactPlayer
-  url={this.props.list.url}
+  url={this.props.list.videoURl}
   controls="true"
   youtubeConfig={{
     playerVars: {
-      start: this.props.list.start,
-      end:this.props.list.stop
+      start: this.props.list.startTime,
+      end:this.props.list.endTime
     }
   }}
   playing

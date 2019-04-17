@@ -11,19 +11,7 @@ export default class Home extends Component {
          user:{}
       }
     }
-    
-    componentWillMount(){
-        console.log("in cmp w m")
-        const config = {
-            apiKey: "AIzaSyB8AA9TZd4PQT-fR7z-E3z7QPO-2srf4rA",
-            authDomain: "grap-tab.firebaseapp.com",
-            databaseURL: "https://grap-tab.firebaseio.com",
-            projectId: "grap-tab",
-            storageBucket: "grap-tab.appspot.com",
-            messagingSenderId: "767571602414"
-          };
-          firebase.initializeApp(config);
-    }
+ 
   render() {
     return (
       <div >

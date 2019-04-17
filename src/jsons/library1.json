@@ -1,32 +1,32 @@
 [
     {
       "id":1,
-    "title":"Rustum",
-    "url":"https://youtu.be/bu_SL4dfxPA",
+    "title":"Annamalai Ted-Talk",
+    "url":"https://youtu.be/dbsVJrSonhE",
     "start":50,
     "stop":70
 
     },
     {
         "id":2,
-      "title":"Padde Huli",
-      "url":"https://youtu.be/eM-D8EqaIx0",
+      "title":"Roopa D Ted-Talk",
+      "url":"https://youtu.be/hQ4SYgOiGs4",
       "start":20,
       "stop":60
   
       },
       {
         "id":3,
-      "title":"Avane Srimannarayana",
-      "url":"https://youtu.be/p86oUHE2IFA",
+      "title":"Ajay Pal Sharma Ted-talk",
+      "url":"https://youtu.be/ikH4XqqaT2c",
       "start":60,
       "stop":80
   
       },
       {
         "id":4,
-      "title":"Panchatantra",
-      "url":"https://youtu.be/fmp9gUXxHws",
+      "title":"Tina Dabi Ted-talk",
+      "url":"https://youtu.be/md4wAywgDEw",
       "start":15,
       "stop":30
   
