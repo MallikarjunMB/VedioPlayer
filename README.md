@@ -1,3 +1,23 @@
+About the Application:-
+
+Login id:fork@gmail.com
+Password:password
+
+I have used the fire base for Authentication and database .
+After login, user can add videos to his library.
+The player will start and end at user mentioned time.
+The player will start when user click on the Video link. 
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
